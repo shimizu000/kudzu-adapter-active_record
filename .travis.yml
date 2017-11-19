@@ -1,0 +1,15 @@
+sudo: false
+language: ruby
+rvm:
+  - 2.3
+  - 2.4
+gemfile:
+  - gemfiles/rails50.gemfile
+  - gemfiles/rails51.gemfile
+before_install:
+  - gem install bundler -v 1.15.3
+before_script:
+  - cd spec/dummy
+  - bin/rails server -p 9292 -b localhost -d -e test
+  - cd ../..
+script: bundle exec rspec
