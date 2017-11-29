@@ -7,14 +7,9 @@ module Kudzu
           @monitor = Monitor.new
         end
 
-        def enqueue(anchors, depth: 0)
+        def enqueue(links, depth: 0)
           @monitor.synchronize do
-            anchors = filter_existing_urls(anchors)
-            links = anchors.map { |anchor| Link.new(uuid: @uuid,
-                                                    url: anchor[:url],
-                                                    title: anchor[:title],
-                                                    state: 0,
-                                                    depth: depth) }
+            links = filter_existing_urls(links)
             Link.import(links)
             links
           end
@@ -37,10 +32,10 @@ module Kudzu
 
         private
 
-        def filter_existing_urls(anchors)
-          urls = Array(anchors).map { |anchor| anchor[:url] }
+        def filter_existing_urls(links)
+          urls = Array(links).map { |link| link.url }
           existed_urls = Link.where(uuid: @uuid, url: urls).pluck(:url)
-          anchors.select { |anchor| !existed_urls.include?(anchor[:url]) }
+          links.select { |link| !existed_urls.include?(link.url) }
         end
       end
     end
