@@ -12,13 +12,11 @@ module Kudzu
         end
 
         def register(page)
-          page.save if page.changed?
-
           if @config[:save_content]
             content = page.content || page.build_content
             content.data = page.body
-            content.save
           end
+          page.save
         end
 
         def delete(page)

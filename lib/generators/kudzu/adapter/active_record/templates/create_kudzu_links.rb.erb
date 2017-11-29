@@ -3,12 +3,13 @@ class CreateKudzuLinks < ActiveRecord::Migration<%= @migration_version %>
     create_table :kudzu_links do |t|
       t.text    :uuid
       t.text    :url
+      t.text    :title
       t.integer :state
       t.integer :depth
       t.timestamps null: false
 
-      t.index :uuid, length: 36
-      t.index :url, length: 255
+      t.index :uuid, length: 4
+      t.index :url, length: 32
       t.index :state
     end
   end

@@ -9,13 +9,14 @@ class CreateKudzuPages < ActiveRecord::Migration[5.0]
       t.text     :digest
       t.text     :response_header
       t.float    :response_time
+      t.text     :redirect_from
       t.datetime :fetched_at
       t.integer  :revisit_interval
       t.datetime :revisit_at
       t.timestamps null: false
 
-      t.index :url, length: 255
-      t.index :digest
+      t.index :url, length: 32
+      t.index :digest, length: 6
     end
   end
 end
