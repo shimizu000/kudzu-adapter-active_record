@@ -2,6 +2,7 @@ class CreateKudzuPages < ActiveRecord::Migration[5.0]
   def change
     create_table :kudzu_pages do |t|
       t.text     :url
+      t.text     :title
       t.integer  :status
       t.text     :mime_type
       t.integer  :size

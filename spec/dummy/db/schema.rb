@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171023054358) do
   create_table "kudzu_links", force: :cascade do |t|
     t.text "uuid"
     t.text "url"
+    t.text "title"
     t.integer "state"
     t.integer "depth"
     t.datetime "created_at", null: false
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20171023054358) do
 
   create_table "kudzu_pages", force: :cascade do |t|
     t.text "url"
+    t.text "title"
     t.integer "status"
     t.text "mime_type"
     t.integer "size"
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171023054358) do
     t.text "digest"
     t.text "response_header"
     t.float "response_time"
+    t.text "redirect_from"
     t.datetime "fetched_at"
     t.integer "revisit_interval"
     t.datetime "revisit_at"

@@ -3,6 +3,7 @@ class CreateKudzuLinks < ActiveRecord::Migration[5.0]
     create_table :kudzu_links do |t|
       t.text    :uuid
       t.text    :url
+      t.text    :title
       t.integer :state
       t.integer :depth
       t.timestamps null: false
