@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20171023054358) do
     t.float "response_time"
     t.text "redirect_from"
     t.datetime "fetched_at"
+    t.datetime "revised_at"
     t.integer "revisit_interval"
     t.datetime "revisit_at"
     t.datetime "created_at", null: false

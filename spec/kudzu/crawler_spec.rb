@@ -9,7 +9,7 @@ describe Kudzu::Crawler do
 
   context 'run' do
     it 'runs crawling' do
-      Kudzu::Crawler.new.run(@seed_url)
+      Kudzu::Crawler.new(log_file: STDOUT, log_level: :debug).run(@seed_url)
       expect(Kudzu::Page.count > 0).to be_truthy
     end
   end
