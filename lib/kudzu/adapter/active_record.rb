@@ -1,6 +1,12 @@
 require 'activerecord-import'
 require 'kudzu'
-require_relative 'active_record/version'
+
+module Kudzu
+  module Adapter
+    module ActiveRecord
+    end
+  end
+end
 
 Kudzu.adapter = Kudzu::Adapter::ActiveRecord
 
