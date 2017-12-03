@@ -2,9 +2,8 @@ module Kudzu
   module Adapter
     module ActiveRecord
       class Repository
-        def initialize(config = {})
-          config_keys = [:save_content]
-          @config = config.select { |k, _| config_keys.include?(k) }
+        def initialize(config)
+          @config = config
         end
 
         def find_by_url(url)
@@ -12,7 +11,7 @@ module Kudzu
         end
 
         def register(page)
-          if @config[:save_content]
+          if @config.save_content
             content = page.content || page.build_content
             content.data = page.body
           end
