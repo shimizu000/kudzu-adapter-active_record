@@ -21,10 +21,6 @@ module Kudzu
         def delete(page)
           page.destroy if page
         end
-
-        def exist_same_content?(page)
-          Page.where.not(url: page.url).where(digest: page.digest).exists?
-        end
       end
     end
   end
