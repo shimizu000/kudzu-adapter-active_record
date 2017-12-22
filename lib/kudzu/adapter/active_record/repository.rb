@@ -3,7 +3,7 @@ module Kudzu
     module ActiveRecord
       class Repository
         def find_by_url(url)
-          Page.where(url: url).first_or_initialize
+          Page.find_or_initialize_by(url: url)
         end
 
         def register(page)
