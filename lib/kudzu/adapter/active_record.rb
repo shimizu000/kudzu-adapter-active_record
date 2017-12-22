@@ -10,10 +10,8 @@ end
 
 Kudzu.adapter = Kudzu::Adapter::ActiveRecord
 
-if defined? Railtie
-  ActiveSupport.on_load :active_record do
-    require_relative 'active_record/all'
-  end
+if defined? Rails
+  require_relative 'active_record/railtie'
 else
   require_relative 'active_record/all'
 end
