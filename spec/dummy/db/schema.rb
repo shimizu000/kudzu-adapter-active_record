@@ -46,8 +46,6 @@ ActiveRecord::Schema.define(version: 20171023054358) do
     t.text "redirect_from"
     t.datetime "fetched_at"
     t.datetime "revised_at"
-    t.integer "revisit_interval"
-    t.datetime "revisit_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["digest"], name: "index_kudzu_pages_on_digest"

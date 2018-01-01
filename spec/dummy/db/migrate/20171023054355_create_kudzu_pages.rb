@@ -13,8 +13,6 @@ class CreateKudzuPages < ActiveRecord::Migration[5.0]
       t.text     :redirect_from
       t.datetime :fetched_at
       t.datetime :revised_at
-      t.integer  :revisit_interval
-      t.datetime :revisit_at
       t.timestamps null: false
 
       t.index :url, length: 32
