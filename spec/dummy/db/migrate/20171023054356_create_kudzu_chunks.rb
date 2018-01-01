@@ -1,6 +1,6 @@
-class CreateKudzuContents < ActiveRecord::Migration[5.0]
+class CreateKudzuChunks < ActiveRecord::Migration[5.0]
   def change
-    create_table :kudzu_contents do |t|
+    create_table :kudzu_chunks do |t|
       t.references :page
       t.binary     :data
       t.timestamps null: false

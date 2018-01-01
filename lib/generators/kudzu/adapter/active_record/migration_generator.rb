@@ -9,7 +9,7 @@ module Kudzu
         def create
           @migration_version = migration_version
           timestamp = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i
-          ["create_kudzu_pages", "create_kudzu_contents", "create_kudzu_links"].each_with_index do |filename, i|
+          ["create_kudzu_pages", "create_kudzu_chunks", "create_kudzu_links"].each_with_index do |filename, i|
             timestamp += i
             template "#{filename}.rb.erb", "db/migrate/#{timestamp}_#{filename}.rb"
           end

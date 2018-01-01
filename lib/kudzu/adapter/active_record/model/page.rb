@@ -2,9 +2,9 @@ module Kudzu
   module Adapter
     module ActiveRecord
       class Page < Base
-        include Kudzu::Adapter::Base::Page
+        include Kudzu::Model::Page
 
-        has_one :content, dependent: :destroy
+        has_many :chunks, -> { order(id: :asc) }, dependent: :delete_all
 
         def response_header
           if response_header_column_is_text?
@@ -22,6 +22,10 @@ module Kudzu
           end
         end
 
+        def data
+          chunks.pluck(:data).join
+        end
+
         private
 
         def response_header_column_is_text?
@@ -31,4 +35,6 @@ module Kudzu
       end
     end
   end
+
+  Page = Adapter::ActiveRecord::Page
 end

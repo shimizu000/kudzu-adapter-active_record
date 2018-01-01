@@ -12,12 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20171023054358) do
 
-  create_table "kudzu_contents", force: :cascade do |t|
+  create_table "kudzu_chunks", force: :cascade do |t|
     t.integer "page_id"
     t.binary "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_kudzu_contents_on_page_id"
+    t.index ["page_id"], name: "index_kudzu_chunks_on_page_id"
   end
 
   create_table "kudzu_links", force: :cascade do |t|

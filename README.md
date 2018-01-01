@@ -30,7 +30,7 @@ Migrate into your application:
 This migration creates following tables:
 
 * kudzu_pages
-* kudzu_contents
+* kudzu_chunks
 * kudzu_links
 
 ## Usage
