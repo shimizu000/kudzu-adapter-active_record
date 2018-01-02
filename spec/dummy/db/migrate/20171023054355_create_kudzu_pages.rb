@@ -14,9 +14,8 @@ class CreateKudzuPages < ActiveRecord::Migration[5.0]
       t.datetime :fetched_at
       t.datetime :revised_at
       t.timestamps null: false
-
-      t.index :url, length: 32
-      t.index :digest, length: 6
     end
+    add_index :kudzu_pages, :url, length: 32
+    add_index :kudzu_pages, :digest, length: 6
   end
 end

@@ -1,0 +1,16 @@
+default: &default
+  adapter: mysql2
+  pool: 100
+  timeout: 5000
+
+development:
+  <<: *default
+  database: kudzu_development
+
+test:
+  <<: *default
+  database: kudzu_test
+
+production:
+  <<: *default
+  database: kudzu_production
