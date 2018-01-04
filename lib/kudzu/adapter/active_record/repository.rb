@@ -28,8 +28,8 @@ module Kudzu
             chunk_num = i + 1
           end
 
-          if (offset = chunk_num - page.chunks.count) > 0
-            page.chunks.offset(offset).delete_all
+          if page.chunks.count - chunk_num > 0
+            page.chunks.select_without_data.offset(chunk_num).each(&:delete)
           end
         end
 
