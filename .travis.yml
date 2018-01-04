@@ -20,5 +20,8 @@ before_install:
   - mysql -e 'create database kudzu_test;'
   - psql -c 'create database kudzu_test;' -U postgres
 before_script:
-  - spec/dummy/bin/rails server -p 9292 -b localhost -d -e test
+  - cd spec/dummy
+  - bundle exec rake db:migrate
+  - bin/rails server -p 9292 -b localhost -d -e test
+  - cd ../..
 script: bundle exec rspec
