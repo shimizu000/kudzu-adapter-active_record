@@ -7,10 +7,9 @@ class CreateKudzuLinks < ActiveRecord::Migration[5.0]
       t.integer :state
       t.integer :depth
       t.timestamps null: false
-
-      t.index :uuid, length: 4
-      t.index :url, length: 32
-      t.index :state
     end
+    add_index :kudzu_links, :uuid, length: 4
+    add_index :kudzu_links, :url, length: 32
+    add_index :kudzu_links, :state
   end
 end

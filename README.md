@@ -4,7 +4,7 @@ ActiveRecord adapter for kudzu crawler.
 
 ## Dependencies
 
-* kudzu 1.0+
+* kudzu 1.1+
 * activerecord 5.0+
 
 ## Installation
@@ -30,7 +30,7 @@ Migrate into your application:
 This migration creates following tables:
 
 * kudzu_pages
-* kudzu_contents
+* kudzu_chunks
 * kudzu_links
 
 ## Usage

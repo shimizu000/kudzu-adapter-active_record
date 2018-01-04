@@ -16,12 +16,14 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "kudzu", ">= 1.0"
+  s.add_dependency "kudzu", ">= 1.1"
   s.add_dependency "activerecord"
   s.add_dependency "activerecord-import"
 
   s.add_development_dependency "rails"
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "mysql2"
+  s.add_development_dependency "pg"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "simplecov"
   s.add_development_dependency "pry-rails"
