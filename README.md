@@ -4,7 +4,7 @@ ActiveRecord adapter for kudzu crawler.
 
 ## Dependencies
 
-* kudzu 1.0+
+* kudzu 1.1+
 * activerecord 5.0+
 
 ## Installation
