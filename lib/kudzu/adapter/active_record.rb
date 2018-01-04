@@ -1,6 +1,5 @@
 require 'activerecord-import'
 require 'kudzu'
-require_relative 'active_record/version'
 
 if defined? Rails
   require_relative 'active_record/railtie'
