@@ -3,7 +3,13 @@ module Kudzu
     module ActiveRecord
       class Repository
         def find_by_url(url)
-          Page.find_or_initialize_by(url: url)
+          case url
+          when /\Ahttp:\/\/.*/
+            another_url = url.sub('http', 'https')
+          else
+            another_url = url.sub('https', 'http')
+          end
+          Page.find_by('url in (?, ?)', url, another_url) || Page.new(url: url)
         end
 
         def register(page)
